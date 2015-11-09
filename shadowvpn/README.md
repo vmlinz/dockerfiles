@@ -23,8 +23,9 @@ shadowvpn:
   ports:
     - "1123:1123/udp"
   volumes:
-    - "server.conf:/etc/shadowvpn/server.conf"
-  privileged: true
+    - "./server.conf:/etc/shadowvpn/server.conf"
+  cap_add:
+    - NET_ADMIN
   restart: always
 ```
 
